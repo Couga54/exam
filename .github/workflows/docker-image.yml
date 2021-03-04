@@ -22,8 +22,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build and push docker-compose
-      - run: cd docker 
-      - run: docker-compose -f docker-compose-exam.yml build 
+        run: cd docker && docker-compose -f docker-compose-exam.yml build 
    
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
