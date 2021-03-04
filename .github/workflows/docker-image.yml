@@ -14,6 +14,12 @@ jobs:
 
       - name: Test2
         run: ls -la
+
+      - name: Test3
+        run: cd .. && ls -la
+
+      - name: Test4
+        run: cd .. && ls -la
       # - name: Set up QEMU
       #   uses: docker/setup-qemu-action@v1
         
