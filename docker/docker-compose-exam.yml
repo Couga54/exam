@@ -4,9 +4,7 @@ services:
     build:
       context: ..
       dockerfile: docker/${Dockerfile}
-      labels:
-        - commit=${GitCommit}
-        - branch=${GitBranch}
-    container_name: ${ImageName}
     image: ${DockerRegistry}/${ImageName}:${ImageTag}
+    container_name: ${ImageName}
+    ports: "80:80"
     restart: always

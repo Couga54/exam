@@ -12,17 +12,6 @@ jobs:
       - name: Check Out Repo
         uses: actions/checkout@v2
 
-      # - name: Test1
-      #   run: pwd
-
-      # - name: Test2
-      #   run: ls -la
-
-      # - name: Test3
-      #   run: cd .. && ls -la
-
-      # - name: Test4
-      #   run: cd ../.. && ls -la
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
         
@@ -37,6 +26,3 @@ jobs:
 
       - name: Build and push docker-compose
         run: cd docker && docker-compose -f docker-compose-exam.yml build && docker-compose -f docker-compose-exam.yml push
-   
-      - name: Image digest
-        run: echo ${{ steps.docker_build.outputs.digest }}
