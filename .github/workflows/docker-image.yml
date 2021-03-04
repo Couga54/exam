@@ -32,6 +32,10 @@ jobs:
 #           context: app
 #           push: true
 #           tags: couga54/exam:0.0.1-b${{ github.run_number }}
-      
-#       - name: Image digest
-#         run: echo ${{ steps.docker_build.outputs.digest }}
+
+      - name: Build and push docker-compose
+        run: cd docker 
+             docker-compose -f docker-compose-exam.yml build 
+   
+      - name: Image digest
+        run: echo ${{ steps.docker_build.outputs.digest }}

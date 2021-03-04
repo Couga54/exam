@@ -1,0 +1,12 @@
+version: "3.5"
+services:
+  couga54-nginx:
+    build:
+      context: ..
+      dockerfile: docker/${Dockerfile}
+      labels:
+        - commit=${GitCommit}
+        - branch=${GitBranch}
+    container_name: ${ImageName}
+    image: ${DockerRegistry}/${ImageName}:${ImageTag}
+    restart: always
