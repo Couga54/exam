@@ -22,8 +22,9 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Test env parameters
-        run: echo couga54/exam:0.0.1-b${{ github.run_number }}
-             echo $ImageTag from .env file
+        run: 
+#           echo couga54/exam:0.0.1-b${{ github.run_number }}
+          echo $(ImageTag) from .env file
 #       - name: Build and push
 #         id: docker_build
 #         uses: docker/build-push-action@v2
