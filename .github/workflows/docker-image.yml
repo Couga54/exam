@@ -9,8 +9,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       
-      - name: Test
+      - name: Test1
         run: pwd
+
+      - name: Test2
+        run: ls -la
       # - name: Set up QEMU
       #   uses: docker/setup-qemu-action@v1
         
