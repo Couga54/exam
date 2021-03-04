@@ -21,21 +21,9 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Test env parameters
-        run: 
-#           echo couga54/exam:0.0.1-b${{ github.run_number }}
-          echo $(ImageTag) from .env file
-#       - name: Build and push
-#         id: docker_build
-#         uses: docker/build-push-action@v2
-#         with:
-#           context: app
-#           push: true
-#           tags: couga54/exam:0.0.1-b${{ github.run_number }}
-
       - name: Build and push docker-compose
-        run: cd docker 
-             docker-compose -f docker-compose-exam.yml build 
+      - run: cd docker 
+      - run: docker-compose -f docker-compose-exam.yml build 
    
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
